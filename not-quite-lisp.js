@@ -1,7 +1,7 @@
 //  My JavaScript solution for the 2015 day 1 challenge from Advent of Code
 //  https://adventofcode.com/2015/day/1
 
-import fs from 'fs';
+const fs = require('fs');
 
 const findFloor = (directions) => {
     return directions.split('').reduce((floor, direction) => {
@@ -20,17 +20,6 @@ const solution = (filename) => {
     console.log(findFloor(input));
 };
 
-[
-    ['(())', 0],
-    ['()()', 0],
-    ['(((', 3],
-    ['(()(()(', 3],
-    ['())', -1],
-    ['))(', -1],
-    [')))', -3],
-    [')())())', -3],
-].map(([input, expected]) => {
-    console.log(input, findFloor(input), expected);
-});
-
 solution('./input.txt');
+
+exports.findFloor = findFloor;
