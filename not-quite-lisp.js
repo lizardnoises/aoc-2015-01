@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 
-const parseFloor = (floor, direction) => {
+const parseDirection = (floor, direction) => {
     if (direction === '(') {
         return floor + 1;
     } else if (direction === ')') {
@@ -16,7 +16,7 @@ const parseFloor = (floor, direction) => {
 // Return the floor reached after parsing the directions string. The starting
 // floor is 0. '(' means go up a floor and ')' means go down a floor.
 const findFloor = (directions) => {
-    return directions.split('').reduce(parseFloor, 0);
+    return directions.split('').reduce(parseDirection, 0);
 };
 
 // A return value of n >= 1 is the first position of the direction that leads
@@ -25,11 +25,13 @@ const findFloor = (directions) => {
 // never reached.
 const findPosition = (directions, floor) => {
     let currentFloor = 0;
-    for (let i = 0; i < directions.length; i++) {
-        currentFloor = parseFloor(currentFloor, directions[i]);
-        if (currentFloor === floor) {
-            return i + 1;
-        }
+    let position = 0;
+    if (directions.split('').some((direction) => {
+        currentFloor = parseDirection(currentFloor, direction);
+        position++;
+        return currentFloor === floor;
+    })) {
+        return position;
     }
     return -1;
 };
