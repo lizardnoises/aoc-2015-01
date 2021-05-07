@@ -37,13 +37,5 @@ const findPosition = (directions, floor) => {
     return -1;
 };
 
-const solution = (filename) => {
-    const input = fs.readFileSync(filename, { encoding: 'utf-8' });
-    console.log('part 1', findFloor(input));
-    console.log('part 2', findPosition(input, -1));
-};
-
-solution('./input.txt');
-
 exports.findFloor = findFloor;
 exports.findPosition = findPosition;

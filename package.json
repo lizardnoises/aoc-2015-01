@@ -2,10 +2,10 @@
   "name": "not-quite-lisp",
   "version": "1.0.0",
   "description": "",
-  "main": "not-quite-lisp.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon not-quite-lisp.js"
+    "start": "nodemon main.js"
   },
   "keywords": [],
   "author": "",
