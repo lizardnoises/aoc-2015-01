@@ -1,5 +1,5 @@
-//  My JavaScript solution for the 2015 day 1 challenge from Advent of Code
-//  https://adventofcode.com/2015/day/1
+// My JavaScript implementation for the 2015 day 1 challenge from
+// Advent of Code (https://adventofcode.com/2015/day/1)
 
 const { findFloor, findPosition } = require('./not-quite-lisp');
 const fs = require('fs');
